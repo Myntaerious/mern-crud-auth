@@ -7,12 +7,12 @@ username: z.string({
 email: z.string({
     required_error: "Email is required"
 }).email({
-    required_error: "Invalid Email"
+    message: "Email is not valid"
 }),
 password: z.string({
     required_error: "password is required"
 }).min(6, ({
-    required_error: "password must be at least 6 characters"
+    message: "password must be at least 6 characters"
 }))
 })
 
@@ -20,11 +20,11 @@ export const loginSchema = z.object({
     email: z.string({
         required_error: "Email is required"
     }).email({
-        required_error: "Invalid Email"
+        message: "Email is not valid"
     }),
     password: z.string({
         required_error: "password is required"
     }).min(6, ({
-        required_error: "password must be at least 6 characters"
+        message: "password must be at least 6 characters"
     }))
 })
